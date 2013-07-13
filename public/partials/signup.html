@@ -1,0 +1,42 @@
+<div>
+    <div class="page-header" style="text-align: center">
+       <h3>{{ 'SIGNUP' | i18n}}</h3>
+    </div>
+    <div  ng-show="showNotification" class="alert alert-{{notification.status}}" id="notificationDiv">
+        <a title="Bootstrap Themes Generator" class="close" href="" ng-click="hideNotification()">×</a>
+        <h4 class="alert-heading">{{ 'NOTIFICATION' | i18n }}</h4>
+        <p>{{notification.message | i18n }}</p>
+        <p data-ng-show="notification.status!='error'" id="loginLink"><a href="" ng-click="setRoute('login')">{{ 'LOGIN' | i18n }}</a></p>
+    </div>
+
+    <form id="myForm"  data-ng-submit="signup()">
+        <div class="control-group">
+            <label for="email" class="control-label">{{ 'EMAIL' | i18n }}</label>
+            <div class="controls">
+                <input id="email" data-ng-model="account.email" type="text" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="password" class="control-label">{{ 'PASSWORD' | i18n }}</label>
+            <div class="controls">
+                <input id="password" data-ng-model="account.password" type="password" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="firstname" class="control-label">{{ 'FIRSTNAME' | i18n }}</label>
+            <div class="controls">
+                <input id="firstname" type="text" data-ng-model="account.firstName" type="text" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="lastname" class="control-label">{{ 'LASTNAME' | i18n }}</label>
+            <div class="controls">
+                <input id="lastname" type="text" data-ng-model="account.lastName" type="text" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ 'SIGNUP' | i18n }}</button>
+        </div>
+    </form>
+</div>

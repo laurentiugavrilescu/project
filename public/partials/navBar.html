@@ -1,0 +1,35 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#/">Fast Booking</a>
+            <ul class="nav pull-left">
+                <li class="divider"></li>
+                <li id="home"><a ng-click="setRoute('home')">{{ 'HOME' | i18n }}</a></li>
+                <li id="login"><a ng-click="setRoute('login')">Autentificare</a></li>
+                <li id="signup"><a ng-click="setRoute('signup')">Inregistrare</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">{{currentLocale.title}}<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li data-ng-repeat="locale in locales"><a href="" ng-click="changeLocale(locale)"><i class="icon-flag-{{locale.code}}"></i>{{locale.title}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul data-ng-show="user!=undefined" class="nav pull-right" id="userInfo">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{user.username}}<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="account"><a href="" ng-click="setRoute('profile/accountDetails','profile')">Profil</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="logOut()">LogOut</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

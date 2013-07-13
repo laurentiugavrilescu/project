@@ -11,12 +11,21 @@
     <script type="text/javascript" src="javascripts/angular/controllers/AboutController.js"></script>
     <script type="text/javascript" src="javascripts/angular/controllers/HomeController.js"></script>
     <script type="text/javascript" src="javascripts/angular/controllers/FormController.js"></script>
+    <script type="text/javascript" src="javascripts/angular/controllers/NavBarController.js"></script>
+    <script type="text/javascript" src="javascripts/angular/controllers/LoginController.js"></script>
+    <script type="text/javascript" src="javascripts/angular/controllers/SignupController.js"></script>
+    <script type="text/javascript" src="javascripts/angular/i18n/filters.js"></script>
+    <script type="text/javascript" src="javascripts/angular/i18n/locale/angular-locale_ro.js"></script>
+    <script type="text/javascript" src="javascripts/angular/i18n/locale/i18n_ro.js"></script>
 
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
     <title>Last minute booking</title>
 </head>
 <body>
+
+<div ng-include src="'partials/navBar.html'" ng-controller="NavBarController"></div>
+
 <div class="container well" style="margin: auto" ng-view>
 
 </div>
